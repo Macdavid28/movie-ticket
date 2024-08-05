@@ -1,5 +1,5 @@
 import { auth, provider } from "./../config/firebase";
-import { signInWithPopup, signOut } from "firebase/auth";
+import { signInWithPopup } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -17,9 +17,7 @@ export const Auth = () => {
       console.error("Google Error", error.message);
     }
   };
-  const signOutFunction = async (): Promise<void> => {
-    signOut(auth);
-  };
+
   return (
     <div className="my-[40%] lg:my-[15%]">
       <div className="flex items center justify-center">
@@ -36,18 +34,7 @@ export const Auth = () => {
             </button>
           </div>
         )}
-        {user && (
-          <div>
-            <h1> {user?.displayName} </h1>
-            <p>{user?.email} </p>
-            <button
-              onClick={signOutFunction}
-              className="p-4 border border-blue-400"
-            >
-              Sign Out
-            </button>
-          </div>
-        )}
+
       </div>
     </div>
   );
