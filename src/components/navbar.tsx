@@ -1,22 +1,11 @@
 import { Link } from "react-router-dom";
-import { Menu } from "semantic-ui-react";
 export const Navbar = () => {
-  return (
-    <Menu fixed="top" size="huge">
-      <Menu.Item as={Link} to="/" style={{ fontSize: "1.5rem" }}>
-        Home
-      </Menu.Item>
-      <Menu.Item as={Link} to="/rated" style={{ fontSize: "1.5rem" }}>
-        Rated
-      </Menu.Item>
-      <Menu.Menu position="right">
-        <Menu.Item as={Link} to="/auth" style={{ fontSize: "1.5rem" }}>
-          Auth
-        </Menu.Item>
-        <Menu.Item as={Link} to="/ark" style={{ fontSize: "1.5rem" }}>
-          Ark
-        </Menu.Item>
-      </Menu.Menu>
-    </Menu>
-  );
+  <>
+    <ul>
+      <li>Home</li>
+      <li>
+        <Link to="/">Tickets </Link>
+      </li>
+    </ul>
+  </>;
 };
