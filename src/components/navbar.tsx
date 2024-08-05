@@ -13,6 +13,9 @@ export const Navbar = () => {
         <Menu.Item as={Link} to="/auth" style={{ fontSize: "1.5rem" }}>
           Auth
         </Menu.Item>
+        <Menu.Item as={Link} to="/ark" style={{ fontSize: "1.5rem" }}>
+          Ark
+        </Menu.Item>
       </Menu.Menu>
     </Menu>
   );
