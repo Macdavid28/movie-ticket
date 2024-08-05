@@ -13,6 +13,7 @@ export const Auth = () => {
       navigate("/");
       toast.success("Login Successful");
     } catch (error: any) {
+      toast.error("Error Signing In");
       console.error("Google Error", error.message);
     }
   };
@@ -20,12 +21,17 @@ export const Auth = () => {
     signOut(auth);
   };
   return (
-    <div className="my-[15%]">
+    <div className="my-[40%] lg:my-[15%]">
       <div className="flex items center justify-center">
         {!user && (
           <div className="border border-black p-4">
-            <h2>Sign In With Google Account Below </h2>
-            <button className="p-4" onClick={googleSignUp}>
+            <h2 className="p-4 text-lg font-semibold">
+              Sign In With Google Account Below{" "}
+            </h2>
+            <button
+              onClick={googleSignUp}
+              className="p-2 border border-blue-400 rounded-md text-md "
+            >
               Sign In With Google
             </button>
           </div>
@@ -34,7 +40,12 @@ export const Auth = () => {
           <div>
             <h1> {user?.displayName} </h1>
             <p>{user?.email} </p>
-            <button onClick={signOutFunction}>Sign Out</button>
+            <button
+              onClick={signOutFunction}
+              className="p-4 border border-blue-400"
+            >
+              Sign Out
+            </button>
           </div>
         )}
       </div>
